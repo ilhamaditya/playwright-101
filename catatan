@@ -1,0 +1,10 @@
+1. Buat Repository di GitHub
+2. Install Playwright
+	Inisialisasi proyek
+		> npm init -y
+	Install playwright
+		> npm install @playwright/test
+	Download browser yang diperlukan Playwright
+		> npx playwright install
+3. Buat Simple Code
+	Buat file playwright.config.js
