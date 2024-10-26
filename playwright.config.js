@@ -1,11 +1,11 @@
-// playwright.config.js
 const { defineConfig } = require('@playwright/test');
+const path = require('path');
 
 module.exports = defineConfig({
-  testDir: './tests',  // folder di mana file tes Anda disimpan
-  retries: 1,          // bisa diatur jika tes gagal untuk diulang
-  reporter: [['list'], ['html']], // bisa menggunakan laporan HTML atau lainnya
-  use: {
-    headless: true,    // menjalankan browser dalam mode headless
+  testDir: './tests',
+  timeout: 30000,
+  expect: {
+    timeout: 5000,
   },
+  reporter: [['list'], ['html', { output: 'report.html' }]],
 });

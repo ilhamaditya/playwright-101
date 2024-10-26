@@ -8,3 +8,23 @@
 		> npx playwright install
 3. Buat Simple Code
 	Buat file playwright.config.js
+	Install ulang node modules
+		> rm -rf node_modules package-lock.json
+		> npm install
+	Hapus Cache NPM (Opsional)
+		> npm cache clean --force
+	Dummy test
+		================================================
+		test('Dummy Test', async () => {
+		  expect(true).toBe(true);
+		});
+		================================================
+	Kill report PID
+		> lsof -i :9323
+		> kill -9 <PID>
+	Periksa Versi Cucumber
+		> npm list -g --depth=0
+	Hapus cucumber
+		> npm uninstall -g @cucumber/cucumber
+
+
