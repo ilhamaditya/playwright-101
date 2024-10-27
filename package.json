@@ -4,7 +4,7 @@
   "description": "Simulation playwright automation",
   "main": "index.js",
   "scripts": {
-    "test": "npx cucumber-js --require ./steps/*.js --tags @login --publish",
+    "test": "npx cucumber-js --require ./steps/*.js --tags @login --publish && npx allure generate ./allure-results --clean && npx allure open",
     "test:bdd": "npx cucumber-js",
     "report": "npx allure generate ./allure-results --clean && npx allure open"
   },

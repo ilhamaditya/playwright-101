@@ -7,5 +7,12 @@ module.exports = defineConfig({
   expect: {
     timeout: 5000,
   },
-  reporter: [['list'], ['html', { output: 'report.html' }]],
+  reporter: [
+    ['list'], 
+    ['html', { output: 'report.html' }],
+    ['allure-playwright'] // Menambahkan Allure sebagai reporter
+  ],
+  use: {
+    trace: 'on-first-retry',
+  },
 });
