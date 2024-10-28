@@ -1,10 +1,12 @@
-const { defineConfig } = require('@playwright/test');
+// playwright.config.js
+const { defineConfig } = require("@playwright/test");
 
 module.exports = defineConfig({
-  testDir: './features',  // Pastikan ini mengarah ke folder yang berisi file .feature
+  testDir: "./features",
   timeout: 30000,
-  reporter: [['allure-playwright']],
+  reporter: [["list"], ["allure-playwright"]],
   use: {
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
+    headless: process.env.headless === "true",
   },
 });

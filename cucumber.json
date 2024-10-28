@@ -1,0 +1,110 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-feature;login-to-orangehrm",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Login to OrangeHRM",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 536262166
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I Visit the OrangeHRM login page",
+            "match": {
+              "location": "steps/LoginSteps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3630404541
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I enter username",
+            "match": {
+              "location": "steps/LoginSteps.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 820532292
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I enter Password",
+            "match": {
+              "location": "steps/LoginSteps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11089041
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click on Login button",
+            "match": {
+              "location": "steps/LoginSteps.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1081773416
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I verify dashboard URL",
+            "match": {
+              "location": "steps/LoginSteps.js:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 62069333
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 27140334
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-feature",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login Feature",
+    "tags": [],
+    "uri": "features/Login.feature"
+  }
+]

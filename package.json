@@ -1,0 +1,17 @@
+{
+  "name": "playwright-101",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx cucumber-js --require ./steps/**/*.js --require ./utility/TestHooks.js --tags @login --format json:./allure-results/results.json",
+    "allure:report": "npx allure generate ./allure-results --clean && npx allure open"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.0",
+    "@cucumber/messages": "^27.0.0",
+    "@playwright/test": "^1.48.2",
+    "allure-playwright": "^3.0.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

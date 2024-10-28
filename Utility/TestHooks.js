@@ -1,22 +1,28 @@
+// utility/TestHooks.js
 const { BeforeAll, AfterAll, Before, After } = require("@cucumber/cucumber");
 const { chromium } = require("playwright");
 
+let browser;
+let context;
+let page;
+
 BeforeAll(async function () {
-  global.browser = await chromium.launch({
-    headless: process.env.HEADLESS === "true",
+  browser = await chromium.launch({
+    headless: process.env.headless === "true",
   });
 });
 
 Before(async function () {
-  this.context = await global.browser.newContext();
-  this.page = await this.context.newPage();
+  context = await browser.newContext();
+  page = await context.newPage();
+  this.page = page; // Associating `page` to the Cucumber `this`
 });
 
 After(async function () {
-  await this.page.close();
-  await this.context.close();
+  await page.close();
+  await context.close();
 });
 
 AfterAll(async function () {
-  await global.browser.close();
+  await browser.close();
 });
