@@ -1,17 +1,9 @@
 const { defineConfig } = require('@playwright/test');
-const path = require('path');
 
 module.exports = defineConfig({
-  testDir: './tests',
+  testDir: './features',  // Pastikan ini mengarah ke folder yang berisi file .feature
   timeout: 30000,
-  expect: {
-    timeout: 5000,
-  },
-  reporter: [
-    ['list'], 
-    ['html', { output: 'report.html' }],
-    ['allure-playwright'] // Menambahkan Allure sebagai reporter
-  ],
+  reporter: [['allure-playwright']],
   use: {
     trace: 'on-first-retry',
   },
