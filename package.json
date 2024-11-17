@@ -2,8 +2,11 @@
   "name": "playwright-101",
   "version": "1.0.0",
   "scripts": {
-    "test": "npx cucumber-js --require ./steps/**/*.js --require ./utility/TestHooks.js --tags @login --format json:./allure-results/results.json",
-    "allure:report": "npx allure generate ./allure-results --clean && npx allure open"
+    "clean-allure-results": "rm -rf allure-results || rmdir /S /Q allure-results", 
+    "play": "npx cucumber-js --require ./steps/app1/**/*.js --require ./utility/TestHooks.js --tags @login --format json:./allure-results/results.json",
+    "allure-generate": "allure generate allure-results --clean",
+    "allure-open": "allure open allure-report",
+    "test": "npm run clean-allure-results && npm run play && npm run allure-generate && npm run allure-open"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.0.0",

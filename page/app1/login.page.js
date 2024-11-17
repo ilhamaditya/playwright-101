@@ -1,4 +1,3 @@
-// page/LoginPage.js
 const { expect } = require("@playwright/test");
 
 class LoginPage {

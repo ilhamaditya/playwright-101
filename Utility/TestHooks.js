@@ -1,10 +1,7 @@
-// utility/TestHooks.js
 const { BeforeAll, AfterAll, Before, After } = require("@cucumber/cucumber");
 const { chromium } = require("playwright");
 
 let browser;
-let context;
-let page;
 
 BeforeAll(async function () {
   browser = await chromium.launch({
@@ -13,14 +10,14 @@ BeforeAll(async function () {
 });
 
 Before(async function () {
-  context = await browser.newContext();
-  page = await context.newPage();
-  this.page = page; // Associating `page` to the Cucumber `this`
+  const context = await browser.newContext();
+  this.page = await context.newPage(); // Attach `page` to the Cucumber `this`
+  this.context = context; // Attach `context` if needed
 });
 
 After(async function () {
-  await page.close();
-  await context.close();
+  await this.page.close();
+  await this.context.close(); // Clean up context
 });
 
 AfterAll(async function () {
